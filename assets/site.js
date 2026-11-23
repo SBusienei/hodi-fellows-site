@@ -3,7 +3,7 @@ import { icon } from "./icons.js";
 import { createConfiguredLink } from "./ui.js";
 
 document.querySelectorAll("[data-icon]").forEach((node) => {
-  node.innerHTML = icon(node.dataset.icon);
+  if (!node.querySelector("svg")) node.innerHTML = icon(node.dataset.icon);
 });
 document.querySelectorAll("[data-phase-review]").forEach((node) => {
   node.textContent = programme.reviewNotice;
