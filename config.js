@@ -4,7 +4,7 @@ export const config = Object.freeze({
     "https://docs.google.com/forms/d/e/1FAIpQLSfc9vTWs2xDY6MB1-J24kPcio68D9DlrbY1y7SrByqChpjI9A/viewform",
   interestUrl: "",
   contactEmail: "hello@hodifellows.com",
-  privacyController: "",
+  privacyController: "Hodi Fellows Company",
   privacyReady: false,
   cohortChannelUrl: "",
   liveSessionUrl: "",
