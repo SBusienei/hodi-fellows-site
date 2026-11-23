@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="400" viewBox="0 0 1600 400">
+  <title>Hodi Fellows application header</title>
+  <desc>The website's saffron doorway badge, Hodi Fellows wordmark and original learning-path illustration.</desc>
+  <rect width="1600" height="400" fill="#DCEBFF"/>
+  <rect x="96" y="50" width="64" height="64" rx="19.2" fill="#F2A93B"/>
+  <g transform="translate(108.8 62.8) scale(1.6)" fill="none" stroke="#13213D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="5" y="2" width="14" height="20" rx="3"/>
+    <circle cx="15" cy="12" r="1"/>
+  </g>
+  <text x="180" y="98" fill="#13213D" font-family="Nunito, Arial, sans-serif" font-size="40" font-weight="800">Hodi Fellows</text>
+  <text x="96" y="215" fill="#13213D" font-family="Lato, Arial, sans-serif" font-size="64" font-weight="700">Put classroom theory</text>
+  <text x="96" y="293" fill="#13213D" font-family="Lato, Arial, sans-serif" font-size="64" font-weight="700">into practice.</text>
+  <image href="../hodi-learning-path.svg" x="1090" y="45" width="400" height="300"/>
+</svg>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+  <title>Hodi Fellows doorway logo</title>
+  <desc>The exact outlined doorway and saffron rounded badge used in the website navigation.</desc>
+  <rect width="512" height="512" rx="153.6" fill="#F2A93B"/>
+  <g transform="translate(102.4 102.4) scale(12.8)" fill="none" stroke="#13213D" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="5" y="2" width="14" height="20" rx="3"/>
+    <circle cx="15" cy="12" r="1"/>
+  </g>
+</svg>
