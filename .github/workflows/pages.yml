@@ -27,7 +27,7 @@ jobs:
       - name: Assemble public artifact
         run: |
           mkdir -p "$RUNNER_TEMP/public-site"
-          cp index.html apply.html privacy.html config.js "$RUNNER_TEMP/public-site/"
+          cp index.html privacy.html config.js "$RUNNER_TEMP/public-site/"
           cp -R assets "$RUNNER_TEMP/public-site/assets"
       - uses: actions/upload-pages-artifact@v3
         with:
