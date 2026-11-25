@@ -1,4 +1,4 @@
-import { config, programme } from "../config.js";
+import { config, programme } from "../config.js?v=closed-20261125";
 import { icon } from "./icons.js";
 import { createConfiguredLink } from "./ui.js";
 
