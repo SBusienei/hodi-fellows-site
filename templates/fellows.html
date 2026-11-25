@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Meet the Hodi Fellows: students who built real work and showed it in public."
+    />
+    <meta name="theme-color" content="#DCEBFF" />
+    <title>Fellows | Hodi Fellows</title>
+    <link rel="icon" href="assets/brand/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="assets/brand/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/brand/apple-touch-icon.png" />
+    <link rel="preload" href="assets/fonts/nunito-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/lato-400-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/lato-700-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="assets/styles.css" />
+    <script type="module" src="assets/site.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to the fellows</a>
+    <header class="site-header">
+      <nav class="container nav" aria-label="Fellows navigation">
+        <a class="brand" href="index.html"
+          ><span class="logo" data-icon="door"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="2" width="14" height="20" rx="3"/><circle cx="15" cy="12" r="1"/></svg></span>Hodi Fellows</a
+        >
+        <a class="button secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSfc9vTWs2xDY6MB1-J24kPcio68D9DlrbY1y7SrByqChpjI9A/viewform" target="_blank" rel="noopener noreferrer"
+          >Apply</a
+        >
+      </nav>
+    </header>
+    <main id="main" class="container section">
+      <h1>Our fellows</h1>
+      <p class="section-intro">
+        Every fellow here finished the programme and built work you can check.
+        Select a card to see their portfolio.
+      </p>
+      {% if fellows %}
+      <ul class="fellow-grid" role="list">
+        {% for fellow in fellows %}
+        <li class="card fellow-card">
+          {% if fellow.photo %}
+          <img
+            class="fellow-photo"
+            src="assets/fellows/{{ fellow.photo }}"
+            alt=""
+            width="88"
+            height="88"
+            loading="lazy"
+            decoding="async"
+          />
+          {% else %}
+          <span class="fellow-photo fellow-initials" aria-hidden="true">{{ fellow.initials }}</span>
+          {% endif %}
+          <h2 class="fellow-name">
+            <a class="fellow-link" href="{{ fellow.main_link }}" target="_blank" rel="noopener noreferrer">{{ fellow.name }}</a>
+          </h2>
+          {% if fellow.cohort %}
+          <p class="eyebrow fellow-cohort">{{ fellow.cohort }}</p>
+          {% endif %}
+          {% if fellow.testimonial %}
+          <blockquote class="fellow-quote"><p>{{ fellow.testimonial }}</p></blockquote>
+          {% endif %}
+          <p class="fellow-links small">
+            {% if fellow.portfolio %}<a href="{{ fellow.portfolio }}" target="_blank" rel="noopener noreferrer">Portfolio</a>{% endif %}
+            {% if fellow.github %}<a href="{{ fellow.github }}" target="_blank" rel="noopener noreferrer">GitHub</a>{% endif %}
+            {% if fellow.linkedin %}<a href="{{ fellow.linkedin }}" target="_blank" rel="noopener noreferrer">LinkedIn</a>{% endif %}
+          </p>
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p class="notice">
+        Our first fellows finish in early 2027. Their work and feedback will
+        appear here.
+      </p>
+      {% endif %}
+    </main>
+    <footer class="container footer compact-footer">
+      <p>
+        <a href="index.html">Hodi Fellows</a> &middot; 2026 &middot;
+        <a href="fellows.html" aria-current="page">Fellows</a> &middot;
+        <a href="privacy.html">Privacy</a>
+      </p>
+    </footer>
+  </body>
+</html>
