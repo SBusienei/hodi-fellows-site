@@ -4,6 +4,12 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
+  # The fellows repo asks for a rebuild after each merge (see its README).
+  repository_dispatch:
+    types: [fellows-updated]
+  # Daily rebuild, so /fellows stays current even without that token.
+  schedule:
+    - cron: "17 4 * * *"
 
 permissions:
   contents: read
@@ -29,6 +35,23 @@ jobs:
           mkdir -p "$RUNNER_TEMP/public-site"
           cp index.html privacy.html config.js "$RUNNER_TEMP/public-site/"
           cp -R assets "$RUNNER_TEMP/public-site/assets"
+      - name: Get the fellows page source
+        uses: actions/checkout@v5
+        with:
+          repository: hodifellows/fellows
+          path: fellows-src
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Build the fellows page into /fellows
+        run: |
+          if [ -f fellows-src/scripts/build.py ]; then
+            pip install -r fellows-src/requirements.txt
+            python fellows-src/scripts/build.py --out "$RUNNER_TEMP/public-site/fellows"
+          else
+            echo "The fellows repo has no build script yet; skipping /fellows."
+          fi
       - uses: actions/upload-pages-artifact@v5
         with:
           path: ${{ runner.temp }}/public-site
